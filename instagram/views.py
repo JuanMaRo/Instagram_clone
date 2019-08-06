@@ -35,5 +35,5 @@ def say_hi(request, name, age):
         message = 'Hola {}. No puedes usar esta alicación pues tiene {} años.'.format(name, age)
     else:
         message = 'Hola {}. Esperamos disfrutes tu experiencia.'.format(name)
-    
+
     return HttpResponse(message)
