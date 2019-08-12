@@ -14,7 +14,7 @@ from posts.models import Post
 @login_required
 def list_posts(request):
     """List existing posts."""
-    posts = Post.objects.all().oreder_by('-created')
+    posts = Post.objects.all().order_by('-created')
 
     return render(request, 'posts/feed.html', {'posts': posts})
 
@@ -36,7 +36,7 @@ def create_post(request):
         template_name='posts/new.html',
         context={
             'form': form,
-            'user': user,
+            'user': request.user,
             'profile': request.user.profile
         }
     )
