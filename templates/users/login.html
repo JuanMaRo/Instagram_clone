@@ -6,8 +6,10 @@
 
 {% block container %}
 
-    {% if error %}
-        <div class="alert alert-danger">{{ error }}</div>
+    {% if form.errors %}
+        <p class="alert alert-danger">
+            Your username and your password didn't match. Please try again.
+        </p>
     {% endif%}
 
     <form method="POST" action="{% url 'users:login' %}">
